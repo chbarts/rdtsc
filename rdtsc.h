@@ -42,7 +42,7 @@ static __inline__ uint64_t rdtsc(void)
    return result;
 }
 
-#elif (defined(__ARM_ARCH) && (__ARM_ARCH >= 6))
+#elif (defined(__arm__) && defined(__ARM_ARCH_6ZK__))
 
 static __inline__ uint64_t rdtsc(void)
 {
