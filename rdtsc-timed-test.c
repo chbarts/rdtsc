@@ -9,7 +9,7 @@ typedef unsigned long long int ull;
 int main(int argc, char *argv[])
 {
     long double avg = 0;
-    uint64_t num, beg, end, tot = 0, r = 0, b, e, j;
+    uint64_t num, beg, end, tot = 0, r, b, e, j;
     int i;
 
     if (1 == argc) {
@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
     beg = rdtsc();
     for (j = 0; j < num; j++) {
         b = rdtsc();
-        for (i = 2; i < argc; i++)
+        for (i = 2, r = 0; i < argc; i++)
             r += strtoll(argv[i], NULL, 0);
         e = rdtsc();
         tot += (e - b);
